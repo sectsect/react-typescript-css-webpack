@@ -1,17 +1,34 @@
 {
+  "extends": "@spotify/tsconfig",
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "target": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
+    // "esModuleInterop": true, // !!!!!!!!!!
+    "incremental": true,
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    // "baseUrl": "src/@types",
+    "baseUrl": ".",
+    "paths": {
+      // "*": ["*"],
+      "*": ["node_modules/*", "src/@types/*"]
+    }
   },
-  "include": ["src"]
+  "include": [
+    "src/**/*",
+    ".eslintrc.js",
+    "babel.config.js",
+    ".eslintrc.js",
+    "stylelint.config.js"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "/test",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
 }

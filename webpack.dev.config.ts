@@ -50,6 +50,9 @@ const config: Configuration = {
     new HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin({
       async: false,
+      eslint: {
+        files: './src/**/*.{ts,tsx,js,jsx}',
+      },
     }),
     new ESLintPlugin({
       extensions: ["js", "jsx", "ts", "tsx"],
