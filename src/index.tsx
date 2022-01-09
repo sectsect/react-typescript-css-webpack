@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './assets/css/base/settings.css';
 import './index.css';
 import content from './content.module.css';
 import heading from './heading.module.css';

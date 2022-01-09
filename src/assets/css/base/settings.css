@@ -1,0 +1,28 @@
+@custom-media --viewport-medium (width >= 768px);
+
+@custom-media --viewport-large (width >= 992px);
+
+@custom-media --viewport-extra-large (width >= 1200px);
+
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+:root {
+  --inner-height: calc(var(--innerVh, 1vh) * 100); /* Fallbacks to 100vh */
+  --font-size: 12px;
+  --font-color: #000;
+  --link-color: var(--font-color);
+  --font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+  --line-height: 1.6;
+  --transition: all 0.3s linear;
+  --border-radius: 5px;
+  --border-color: #c8c8c8;
+  --base-width: 1000px;
+  --mobile-header-height: 50px;
+  --wp-element-margin: 20px;
+}
+
+@media (--viewport-medium) {
+  :root {
+    --font-size: 14px;
+  }
+}

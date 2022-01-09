@@ -2,6 +2,7 @@ import path from 'path';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
 import { HotModuleReplacementPlugin } from 'webpack';
 // import { Configuration, HotModuleReplacementPlugin } from "webpack";
 import {
@@ -33,7 +34,7 @@ const config: Configuration = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
         // use: [
         //   'style-loader',
         //   {
@@ -70,6 +71,11 @@ const config: Configuration = {
     }),
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
+    }),
+    new StyleLintPlugin({
+      files: 'src/**/*.css',
+      lintDirtyModulesOnly: true,
+      fix: true,
     }),
   ],
   devtool: 'inline-source-map',

@@ -4,6 +4,7 @@ import ESLintPlugin from 'eslint-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
 import { Configuration } from 'webpack';
 
 const config: Configuration = {
@@ -29,7 +30,7 @@ const config: Configuration = {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
     ],
   },
@@ -49,6 +50,11 @@ const config: Configuration = {
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
     new CleanWebpackPlugin(),
+    new StyleLintPlugin({
+      files: 'src/**/*.css',
+      lintDirtyModulesOnly: true,
+      fix: true,
+    }),
     new MiniCssExtractPlugin({
       // filename: "[name].[contenthash].css",
       filename: '[name].css',
