@@ -6,6 +6,7 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration } from 'webpack';
 
 const config: Configuration = {
@@ -39,7 +40,28 @@ const config: Configuration = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          name: 'commons',
+          chunks: 'initial',
+          minChunks: 2,
+        },
+      },
+    },
     minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+          compress: {
+            drop_console: true,
+          },
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
       new CssMinimizerPlugin({
         minimizerOptions: {
           preset: [
@@ -77,6 +99,7 @@ const config: Configuration = {
       filename: '[name].css',
     }),
   ],
+  devtool: false,
 };
 
 export default config;
