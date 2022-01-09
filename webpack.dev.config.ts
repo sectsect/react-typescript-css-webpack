@@ -9,6 +9,7 @@ import {
   Configuration as WebpackDevServerConfiguration,
   WebpackConfiguration,
 } from 'webpack-dev-server';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
@@ -71,6 +72,11 @@ const config: Configuration = {
     }),
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
+    }),
+    new BundleAnalyzerPlugin({
+      // analyzerMode: 'static',
+      // reportFilename: path.join(__dirname, 'report.html'),
+      openAnalyzer: false,
     }),
     new StyleLintPlugin({
       files: 'src/**/*.css',
