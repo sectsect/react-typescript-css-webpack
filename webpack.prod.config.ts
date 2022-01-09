@@ -99,6 +99,13 @@ const config: Configuration = {
       filename: '[name].css',
     }),
   ],
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename],
+    },
+    name: 'production',
+  },
   devtool: false,
 };
 

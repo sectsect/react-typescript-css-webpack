@@ -78,6 +78,13 @@ const config: Configuration = {
       fix: true,
     }),
   ],
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename],
+    },
+    name: 'development',
+  },
   devtool: 'inline-source-map',
   devServer: {
     static: {
