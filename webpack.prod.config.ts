@@ -11,7 +11,8 @@ const config: Configuration = {
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "[name].[contenthash].js",
+    // filename: "[name].[contenthash].js",
+    filename: "[name].js",
     publicPath: "",
   },
   module: {
@@ -51,7 +52,8 @@ const config: Configuration = {
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      // filename: "[name].[contenthash].css",
+      filename: "[name].css",
     }),
   ],
 };
