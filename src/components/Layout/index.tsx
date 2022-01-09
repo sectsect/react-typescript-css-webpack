@@ -1,4 +1,3 @@
-// import { ReactComponent as SvgSymbol } from '../../../../../dist/assets/images/svg/symbol.svg';
 import Header from '../Header/index';
 
 interface LayoutProps {
@@ -7,7 +6,6 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => (
   <>
-    {/* <SvgSymbol /> */}
     <Header />
     <main>{children}</main>
   </>
