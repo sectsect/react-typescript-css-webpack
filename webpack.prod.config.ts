@@ -43,6 +43,8 @@ const config: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",
+      inject: 'body',
+      scriptLoading: 'defer',
     }),
     new ForkTsCheckerWebpackPlugin({
       async: false,
