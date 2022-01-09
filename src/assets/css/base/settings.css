@@ -8,7 +8,7 @@
 
 :root {
   --inner-height: calc(var(--innerVh, 1vh) * 100); /* Fallbacks to 100vh */
-  --font-size: 12px;
+  --font-size: 15px;
   --font-color: #000;
   --link-color: var(--font-color);
   --font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
@@ -23,6 +23,6 @@
 
 @media (--viewport-medium) {
   :root {
-    --font-size: 14px;
+    --font-size: 20px;
   }
 }
