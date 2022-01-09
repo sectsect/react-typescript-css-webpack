@@ -1,49 +1,63 @@
-import path from "path";
-import { HotModuleReplacementPlugin } from "webpack";
+import path from 'path';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { HotModuleReplacementPlugin } from 'webpack';
 // import { Configuration, HotModuleReplacementPlugin } from "webpack";
-import { Configuration as WebpackDevServerConfiguration, WebpackConfiguration } from "webpack-dev-server";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import ESLintPlugin from "eslint-webpack-plugin";
+import {
+  Configuration as WebpackDevServerConfiguration,
+  WebpackConfiguration,
+} from 'webpack-dev-server';
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
 }
 
 const config: Configuration = {
-  mode: "development",
+  mode: 'development',
   output: {
-    publicPath: "/",
+    publicPath: '/',
   },
-  entry: "./src/index.tsx",
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
         test: /\.(ts|js)x?$/i,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: [
-              "@babel/preset-env",
-              "@babel/preset-react",
-              "@babel/preset-typescript",
-            ],
+            cacheDirectory: true,
           },
         },
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
+        // use: [
+        //   'style-loader',
+        //   {
+        //     loader: 'css-loader',
+        //     options: {
+        //       importLoaders: 2,
+        //       // 0 => no loaders (default);
+        //       // 1 => postcss-loader;
+        //       // 2 => postcss-loader, sass-loader
+        //       modules: true,
+        //     },
+        //   },
+        //   'postcss-loader',
+        //   'sass-loader',
+        // ],
       },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: 'src/index.html',
       inject: 'body',
       scriptLoading: 'defer',
     }),
@@ -55,13 +69,13 @@ const config: Configuration = {
       },
     }),
     new ESLintPlugin({
-      extensions: ["js", "jsx", "ts", "tsx"],
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
   ],
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
     static: {
-      directory: path.join(__dirname, "build"),
+      directory: path.join(__dirname, 'build'),
     },
     historyApiFallback: true,
     port: 4000,

@@ -1,19 +1,19 @@
-import path from "path";
-import { Configuration } from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import ESLintPlugin from "eslint-webpack-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import path from 'path';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { Configuration } from 'webpack';
 
 const config: Configuration = {
-  mode: "production",
-  entry: "./src/index.tsx",
+  mode: 'production',
+  entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, 'build'),
     // filename: "[name].[contenthash].js",
-    filename: "[name].js",
-    publicPath: "",
+    filename: '[name].js',
+    publicPath: '',
   },
   module: {
     rules: [
@@ -21,7 +21,7 @@ const config: Configuration = {
         test: /\.(ts|js)x?$/i,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             cacheDirectory: true,
           },
@@ -29,16 +29,16 @@ const config: Configuration = {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: 'src/index.html',
       inject: 'body',
       scriptLoading: 'defer',
     }),
@@ -46,12 +46,12 @@ const config: Configuration = {
       async: false,
     }),
     new ESLintPlugin({
-      extensions: ["js", "jsx", "ts", "tsx"],
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       // filename: "[name].[contenthash].css",
-      filename: "[name].css",
+      filename: '[name].css',
     }),
   ],
 };
