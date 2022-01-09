@@ -5,6 +5,7 @@ import ESLintPlugin from 'eslint-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration } from 'webpack';
@@ -81,6 +82,10 @@ const config: Configuration = {
       template: 'src/index.html',
       inject: 'body',
       scriptLoading: 'defer',
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      preload: /\.js$/,
+      // defaultAttribute: 'defer'
     }),
     new ForkTsCheckerWebpackPlugin({
       async: false,

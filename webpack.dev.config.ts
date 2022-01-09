@@ -2,6 +2,7 @@ import path from 'path';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import { HotModuleReplacementPlugin } from 'webpack';
 // import { Configuration, HotModuleReplacementPlugin } from "webpack";
@@ -62,6 +63,10 @@ const config: Configuration = {
       template: 'src/index.html',
       inject: 'body',
       scriptLoading: 'defer',
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      preload: /\.js$/,
+      // defaultAttribute: 'defer'
     }),
     new HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin({
