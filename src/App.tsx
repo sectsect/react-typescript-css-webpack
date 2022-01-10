@@ -43,7 +43,7 @@ const App: React.VFC = () => {
   return (
     <Layout>
       <ul className="user-list">
-        {users?.map((user) => (
+        {users?.map(user => (
           <li key={user.id} className={user.verified ? 'verified' : ''}>
             {user.name}
           </li>
