@@ -17,7 +17,14 @@ module.exports = {
     ],
     'custom-media-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
     'custom-property-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-    'comment-empty-line-before': 'never',
+    'comment-empty-line-before': [
+      'always',
+      {
+        except: ['first-nested'],
+        ignore: ['after-comment', 'stylelint-commands'],
+        ignoreComments: ['/^ignore/', 'string-ignore'],
+      },
+    ],
     'declaration-block-no-duplicate-properties': [
       true,
       {
