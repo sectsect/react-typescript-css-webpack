@@ -34,6 +34,29 @@ const config: Configuration = {
         },
       },
       {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              svgoConfig: {
+                plugins: [
+                  {
+                    name: 'addClassesToSVGElement',
+                    params: {
+                      classNames: ['svg-icon-lib'],
+                    },
+                  },
+                ],
+              },
+            },
+          },
+          {
+            loader: 'url-loader',
+          },
+        ],
+      },
+      {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
         // use: [

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Icons from './components/Icons';
 import Layout from './components/Layout';
 
 interface MyData {
@@ -49,6 +50,7 @@ const App: React.VFC = () => {
           </li>
         ))}
       </ul>
+      <Icons />
       <div className="icons">
         <svg className="icon">
           <use xlinkHref="#icon-facebook" />
