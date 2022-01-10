@@ -19,6 +19,10 @@ module.exports = {
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$',
     '^.+\\.module\\.(css|sass|scss)$',
   ],
+  moduleNameMapper: {
+    "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js",
+    "\\.(gif|ttf|eot|svg)$": "<rootDir>/test/__mocks__/fileMock.js",
+  },
   moduleFileExtensions: [
     'web.js',
     'js',
@@ -31,9 +35,9 @@ module.exports = {
     'jsx',
     'node',
   ],
-  moduleNameMapper: {
-    "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js",
-    "\\.(gif|ttf|eot|svg)$": "<rootDir>/test/__mocks__/fileMock.js",
-  },
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname',
+  ],
   resetMocks: true,
 };
