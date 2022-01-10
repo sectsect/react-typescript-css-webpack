@@ -36,7 +36,7 @@
       "stylelint --fix"
     ],
     "src/**/*.{ts,tsx}": [
-      "tsc-files --noEmit"
+      "tsc-files --noEmit src/@types/custom.d.ts"
     ]
   },
   "dependencies": {

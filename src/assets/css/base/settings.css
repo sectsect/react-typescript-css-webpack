@@ -10,13 +10,14 @@
   --inner-height: calc(var(--innerVh, 1vh) * 100); /* Fallbacks to 100vh */
   --font-size: 15px;
   --font-color: #000;
+  --font-weight: bold;
   --link-color: var(--font-color);
   --font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
   --line-height: 1.6;
   --transition: all 0.3s linear;
   --border-radius: 5px;
   --border-color: #c8c8c8;
-  --base-width: 1000px;
+  --base-width: 1200px;
   --mobile-header-height: 50px;
   --wp-element-margin: 20px;
 }

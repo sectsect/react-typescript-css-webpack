@@ -1,63 +1,7 @@
 @charset "UTF-8";
 
-body {
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  font-weight: bold;
-  color: var(--font-color);
-}
-/* Remove margin, padding of all elements and set background-no-repeat as default */
-* {
-  padding: 0;
-  margin: 0;
-}
+@import 'assets/css/base/commons.css';
 
-picture,
-source {
-  display: block;
-}
+@import 'assets/css/base/structure.css';
 
-ol,
-ul {
-  list-style: none;
-}
-
-a,
-button,
-input[type='button'],
-input[type='submit'],
-input[type='reset'],
-input[type='image'] {
-  color: var(--font-color);
-  text-decoration: none;
-  -webkit-tap-highlight-color: rgb(0 0 0 / 0);
-  transition: var(--transition);
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: var(--link-color);
-  }
-
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
-:--heading {
-  margin: 0;
-  font-size: 100%;
-}
-
-svg {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-  stroke: currentColor;
-  stroke-width: 0;
-
-  & path {
-    fill: currentColor;
-  }
-}
+@import 'assets/css/base/svg-icon.css';

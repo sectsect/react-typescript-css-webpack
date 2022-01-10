@@ -2,7 +2,9 @@ import styles from './styles.module.css';
 
 const Header: React.VFC = () => (
   <header className={styles.header}>
-    <h1 className={styles.heading}>App Component</h1>
+    <div className="inner">
+      <h1 className={styles.heading}>App Component</h1>
+    </div>
   </header>
 );
 

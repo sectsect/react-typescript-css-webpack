@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Icons from './components/Icons';
 import Layout from './components/Layout';
 
 interface MyData {
@@ -43,37 +42,17 @@ const App: React.VFC = () => {
 
   return (
     <Layout>
-      <ul className="user-list">
-        {users?.map(user => (
-          <li key={user.id} className={user.verified ? 'verified' : ''}>
-            {user.name}
-          </li>
-        ))}
-      </ul>
-      <Icons />
-      <div className="icons">
-        <svg className="icon">
-          <use xlinkHref="#icon-facebook" />
-        </svg>
-        <svg className="icon">
-          <use xlinkHref="#icon-twitter" />
-        </svg>
-        <svg className="icon">
-          <use xlinkHref="#icon-youtube" />
-        </svg>
-        <svg className="icon">
-          <use xlinkHref="#icon-instagram" />
-        </svg>
-        <svg className="icon">
-          <use xlinkHref="#icon-line" />
-        </svg>
-        <svg className="icon">
-          <use xlinkHref="#icon-arrow-top" />
-        </svg>
-        <svg className="icon">
-          <use xlinkHref="#icon-search" />
-        </svg>
-      </div>
+      <section>
+        <div className="inner">
+          <ul className="user-list">
+            {users?.map(user => (
+              <li key={user.id} className={user.verified ? 'verified' : ''}>
+                {user.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </Layout>
   );
 };

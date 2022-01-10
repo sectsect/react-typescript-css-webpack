@@ -1,3 +1,4 @@
+import Footer from '../Footer/index';
 import Header from '../Header/index';
 
 interface LayoutProps {
@@ -8,6 +9,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => (
   <>
     <Header />
     <main>{children}</main>
+    <Footer />
   </>
 );
 
