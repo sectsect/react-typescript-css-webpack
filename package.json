@@ -17,7 +17,8 @@
       "secretlint"
     ],
     "src/**/*.{js,jsx,ts,tsx,vue}": [
-      "eslint --fix"
+      "eslint --fix",
+      "npm test"
     ],
     "src/**/*.{css,scss}": [
       "stylelint --fix"
