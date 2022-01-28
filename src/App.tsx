@@ -44,6 +44,7 @@ const App: React.VFC = () => {
     <Layout>
       <section>
         <div className="inner">
+          <h1>{process.env.API_URL}</h1>
           <ul className="user-list">
             {users?.map(user => (
               <li key={user.id} className={user.verified ? 'verified' : ''}>
