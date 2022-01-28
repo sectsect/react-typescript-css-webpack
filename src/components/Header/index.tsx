@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './index.module.css';
 
 const Header: React.VFC = () => (
   <header className={styles.header}>
