@@ -1,5 +1,5 @@
-import Icons from '../Icons';
 import styles from './index.module.css';
+import Icons from '@/components/Icons';
 
 const Footer: React.VFC = () => {
   return (

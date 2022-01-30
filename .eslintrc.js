@@ -1,3 +1,5 @@
+// import path from 'path';
+
 module.exports = {
   extends: [
     'react-app',
@@ -52,6 +54,7 @@ module.exports = {
     // extraFileExtensions: ['.css'],
   },
   rules: {
+    'import/extensions': 0,
     'import/prefer-default-export': 'off',
     // 'import/no-extraneous-dependencies': 'off',
     // 'import/no-default-export': 'error',
@@ -76,6 +79,7 @@ module.exports = {
     // 'import/resolver': {
     //   webpack: {
     //     config: 'webpack.config.js',
+    //     config: path.join(__dirname, 'webpack.dev.config.ts'), // @ https://github.com/import-js/eslint-plugin-import/issues/352#issuecomment-236821515
     //   },
     // },
     'jsx-a11y/label-has-associated-control': 'off',

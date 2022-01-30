@@ -1,7 +1,7 @@
-import { ReactComponent as FacebookIcon } from '../../assets/images/svg/facebook.svg';
-import { ReactComponent as InstagramIcon } from '../../assets/images/svg/instagram.svg';
-import { ReactComponent as TwitterIcon } from '../../assets/images/svg/twitter.svg';
 import styles from './index.module.css';
+import { ReactComponent as FacebookIcon } from '@/assets/images/svg/facebook.svg';
+import { ReactComponent as InstagramIcon } from '@/assets/images/svg/instagram.svg';
+import { ReactComponent as TwitterIcon } from '@/assets/images/svg/twitter.svg';
 
 const Header: React.VFC = () => (
   <ul className={styles.list}>
