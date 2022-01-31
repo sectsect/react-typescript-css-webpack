@@ -111,6 +111,9 @@ const webpackConfig = (env: Env) => {
       }),
       new ESLintPlugin({
         extensions: ['js', 'jsx', 'ts', 'tsx'],
+        fix: true,
+        emitError: true,
+        lintDirtyModulesOnly: true,
       }),
       new BundleAnalyzerPlugin({
         // analyzerMode: 'static',
