@@ -16,7 +16,7 @@ module.exports = {
   ],
   settings: {
     react: {
-      version: 'latest',
+      version: '"detect',
     },
     jest: { version: 27 },
     // 'import/ignore': ['.css$', 'node_modules/*'],
