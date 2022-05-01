@@ -18,7 +18,7 @@ declare global {
   }
 }
 
-const App: React.VFC = () => {
+const App: React.FC = () => {
   const [users] = useState<Users[]>([
     {
       id: 1,
