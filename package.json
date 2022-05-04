@@ -25,22 +25,6 @@
       "last 1 safari version"
     ]
   },
-  "lint-staged": {
-    "*": [
-      "secretlint"
-    ],
-    "src/**/*.{js,jsx,ts,tsx,vue}": [
-      "eslint --fix",
-      "eslint",
-      "npm test"
-    ],
-    "src/**/*.{css,scss}": [
-      "stylelint --fix"
-    ],
-    "src/**/*.{ts,tsx}": [
-      "tsc-files --noEmit src/@types/custom.d.ts"
-    ]
-  },
   "dependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
