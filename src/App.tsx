@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+
 import { useSetRecoilState, useResetRecoilState } from 'recoil';
+
 import Layout from '@/components/Layout';
 import { nameState } from '@/recoil/atoms/nameAtom';
 

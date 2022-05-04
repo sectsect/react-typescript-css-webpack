@@ -1,8 +1,10 @@
 // import React from 'react';
 // import ReactDOM from 'react-dom/client';
 import * as React from 'react';
+
 import * as ReactDOM from 'react-dom/client';
 import { RecoilRoot } from 'recoil';
+
 import '@/assets/css/base/settings.css';
 import 'sanitize.css';
 import 'sanitize.css/forms.css';
