@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "mikestead.dotenv",
+    "csstools.postcss",
+    "blanu.vscode-styled-jsx",
+    "msjsdiag.debugger-for-chrome",
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss",
+    // "heybourn.headwind",
+    "austenc.tailwind-docs",
+    "petermekhaeil.vscode-tailwindcss-explorer",
+    "dsznajder.es7-react-js-snippets"
+  ]
+}
