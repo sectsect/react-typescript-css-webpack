@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSetRecoilState, useResetRecoilState } from 'recoil';
 import Layout from '@/components/Layout';
+import { nameState } from '@/recoil/atoms/nameAtom';
 
 interface MyData {
   message: string;
@@ -19,6 +21,9 @@ declare global {
 }
 
 const App: React.FC = () => {
+  const setNameState = useSetRecoilState(nameState);
+  const resetNameState = useResetRecoilState(nameState);
+
   const [users] = useState<Users[]>([
     {
       id: 1,
@@ -39,6 +44,14 @@ const App: React.FC = () => {
       verified: false,
     },
   ]);
+
+  useEffect(() => {
+    setNameState('sect');
+
+    return () => {
+      resetNameState();
+    };
+  }, [resetNameState, setNameState]);
 
   return (
     <Layout>

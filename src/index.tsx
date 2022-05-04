@@ -2,6 +2,7 @@
 // import ReactDOM from 'react-dom/client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
+import { RecoilRoot } from 'recoil';
 import '@/assets/css/base/settings.css';
 import 'sanitize.css';
 import 'sanitize.css/forms.css';
@@ -15,6 +16,8 @@ if (el === null) throw new Error('Root container missing in index.html');
 const root = ReactDOM.createRoot(el);
 root.render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </React.StrictMode>,
 );
