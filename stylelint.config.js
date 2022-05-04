@@ -12,7 +12,18 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: ['mixin', 'define-mixin', 'if', 'else'],
+        ignoreAtRules: [
+          'mixin',
+          'define-mixin',
+          'if',
+          'else',
+          'tailwind',
+          'apply',
+          'layer',
+          'variants',
+          'responsive',
+          'screen',
+        ],
       },
     ],
     'custom-media-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',

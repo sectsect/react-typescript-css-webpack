@@ -44,7 +44,7 @@ const App: React.FC = () => {
     <Layout>
       <section>
         <div className="inner">
-          <h1>{process.env.API_URL}</h1>
+          <h1 className="text-3xl font-bold">{process.env.API_URL}</h1>
           <ul className="user-list">
             {users?.map(user => (
               <li key={user.id} className={user.verified ? 'verified' : ''}>

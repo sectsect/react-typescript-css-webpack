@@ -5,3 +5,9 @@
 @import 'assets/css/base/structure.css';
 
 @import 'assets/css/base/svg-icon.css';
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;

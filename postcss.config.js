@@ -1,4 +1,8 @@
+// https://tailwindcss.com/docs/using-with-preprocessors#nesting
+
 const postcssImport = require('postcss-import');
+const tailwindcssNesting = require('tailwindcss/nesting')(require('postcss-nesting'));
+const tailwindcss = require('tailwindcss');
 const postcssPresetEnv = require('postcss-preset-env')({
   stage: 1, // Default: stage: 2   @ https://cssdb.org/#staging-process
   importFrom: 'src/assets/css/base/settings.css',
@@ -6,7 +10,7 @@ const postcssPresetEnv = require('postcss-preset-env')({
     grid: 'autoplace',
   },
   features: {
-    'nesting-rules': true,
+    'nesting-rules': false,
     'custom-properties': {
       disableDeprecationNotice: true,
     },
@@ -28,6 +32,8 @@ const postcssReporter = require('postcss-reporter')({
 module.exports = {
   plugins: [
     postcssImport,
+    tailwindcssNesting,
+    tailwindcss,
     postcssPresetEnv,
     postcssSortMediaQueries,
     postcssCombineSelectors,
