@@ -29,8 +29,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "css.validate": false,
-  "scss.validate": false,
-  // Add support for nested project structure.
-  "eslint.nodePath": "nextjs/node_modules",
-  "eslint.workingDirectories": ["./nextjs", "./static"]
+  "scss.validate": false
+  // // Add support for nested project structure.
+  // "eslint.nodePath": "nextjs/node_modules",
+  // "eslint.workingDirectories": ["./nextjs", "./static"]
 }
