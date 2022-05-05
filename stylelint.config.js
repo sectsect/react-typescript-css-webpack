@@ -8,7 +8,7 @@ module.exports = {
   plugins: ['stylelint-prettier'],
   rules: {
     'alpha-value-notation': 'number',
-    'at-rule-empty-line-before': 'always',
+    // 'at-rule-empty-line-before': 'always',
     'at-rule-no-unknown': [
       true,
       {
@@ -28,14 +28,7 @@ module.exports = {
     ],
     'custom-media-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
     'custom-property-pattern': '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$',
-    'comment-empty-line-before': [
-      'always',
-      {
-        except: ['first-nested'],
-        ignore: ['after-comment', 'stylelint-commands'],
-        ignoreComments: ['/^ignore/', 'string-ignore'],
-      },
-    ],
+    'comment-empty-line-before': 'never',
     'declaration-block-no-duplicate-properties': [
       true,
       {
