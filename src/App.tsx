@@ -1,53 +1,54 @@
 import { useEffect, useState } from 'react';
 
+import { AxiosError } from 'axios';
 import { useSetRecoilState, useResetRecoilState } from 'recoil';
 
+import { Post } from '@/@types/api/post.interface';
 import Layout from '@/components/Layout';
 import { nameState } from '@/recoil/atoms/nameAtom';
+import { fetchPosts } from '@/utils/requests/post';
 
-interface MyData {
-  message: string;
-}
+// interface MyData {
+//   message: string;
+// }
 
-interface Users {
-  id: number;
-  name: string;
-  email: string;
-  verified: boolean;
-}
-
-declare global {
-  interface Window {
-    my_data: MyData;
-  }
-}
+// declare global {
+//   interface Window {
+//     my_data: MyData;
+//   }
+// }
 
 const App: React.FC = () => {
+  const [isLoading, setLoading] = useState(false);
+  const [posts, setPosts] = useState<Post[]>([]);
+
   const setNameState = useSetRecoilState(nameState);
   const resetNameState = useResetRecoilState(nameState);
 
-  const [users] = useState<Users[]>([
-    {
-      id: 1,
-      name: 'John',
-      email: 'john@google.com',
-      verified: false,
-    },
-    {
-      id: 2,
-      name: 'Jack',
-      email: 'jack@google.com',
-      verified: true,
-    },
-    {
-      id: 3,
-      name: 'James',
-      email: 'james@google.com',
-      verified: false,
-    },
-  ]);
-
   useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const data = await fetchPosts();
+        setPosts(data);
+      } catch (e) {
+        const error = e as AxiosError<Post[]>;
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+        console.log(e);
+      }
+      setLoading(false);
+    };
+
+    fetchData();
+
     setNameState('sect');
 
     return () => {
@@ -59,14 +60,18 @@ const App: React.FC = () => {
     <Layout>
       <section>
         <div className="inner">
-          <h1 className="text-3xl font-bold">{process.env.API_URL}</h1>
-          <ul className="user-list">
-            {users?.map(user => (
-              <li key={user.id} className={user.verified ? 'verified' : ''}>
-                {user.name}
-              </li>
-            ))}
-          </ul>
+          <h1 className="text-3xl font-bold">POSTS</h1>
+          <div className="mt-8">
+            {isLoading ? (
+              <div>Loading</div>
+            ) : (
+              <ul>
+                {posts.map(post => (
+                  <li key={post.id}>{post.title}</li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
       </section>
     </Layout>
