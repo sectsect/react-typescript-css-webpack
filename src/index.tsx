@@ -3,6 +3,8 @@
 import * as React from 'react';
 
 import * as ReactDOM from 'react-dom/client';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';
 
 import '@/assets/css/base/settings.css';
@@ -15,11 +17,17 @@ import App from './App';
 const el = document.getElementById('root');
 if (el === null) throw new Error('Root container missing in index.html');
 
+// Create a client for react-query
+const queryClient = new QueryClient();
+
 const root = ReactDOM.createRoot(el);
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <App />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </RecoilRoot>
   </React.StrictMode>,
 );
