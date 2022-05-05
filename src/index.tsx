@@ -8,9 +8,9 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';
 
 import '@/assets/css/base/settings.css';
-import 'sanitize.css';
-import 'sanitize.css/forms.css';
-import 'sanitize.css/typography.css';
+// import 'sanitize.css';
+// import 'sanitize.css/forms.css';
+// import 'sanitize.css/typography.css';
 import '@/index.css';
 import App from './App';
 
