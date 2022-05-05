@@ -26,3 +26,30 @@ export const fetchPosts = async (route = 'posts'): Promise<Post[]> => {
       throw new Error(`HTTP Error: ${response.status}`);
     });
 };
+
+/**
+ * Simulate errors from the API
+ *
+ * @param  statusCode - The status code to simulate
+ *
+ * @remarks
+ *
+ * Request URL: `http://httpstat.us/500`
+ *
+ * @see http://httpstat.us/
+ *
+ * @returns Promise
+ */
+export const fetchPostsSimulateError = async (
+  statusCode = '500',
+): Promise<Post[]> => {
+  return axios
+    .get(`http://httpstat.us/${statusCode}`)
+    .then((response: AxiosResponse<Post[]>) => {
+      if (response.status === 200 && response.data) {
+        const { data } = response;
+        return data;
+      }
+      throw new Error(`HTTP Error: ${response.status}`);
+    });
+};
