@@ -3,7 +3,7 @@ import { ReactComponent as FacebookIcon } from '@/assets/images/svg/facebook.svg
 import { ReactComponent as InstagramIcon } from '@/assets/images/svg/instagram.svg';
 import { ReactComponent as TwitterIcon } from '@/assets/images/svg/twitter.svg';
 
-const Header: React.VFC = () => (
+const Header: React.FC = () => (
   <ul className={styles.list}>
     <li className={styles.listItem}>
       <a href="https://twitter.com/" className={styles.listItemLink}>

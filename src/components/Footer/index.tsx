@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import Icons from '@/components/Icons';
 
-const Footer: React.VFC = () => {
+const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className="inner">
