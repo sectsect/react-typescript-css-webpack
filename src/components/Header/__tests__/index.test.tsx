@@ -1,13 +1,20 @@
 import { render, screen } from '@testing-library/react';
+import { RecoilRoot } from 'recoil';
+
 import Header from '../index';
+
 import '@testing-library/jest-dom/extend-expect';
 
 test('header renders with correct text', () => {
-  render(<Header />);
+  render(
+    <RecoilRoot>
+      <Header />
+    </RecoilRoot>,
+  );
   // screen.getByRole('');
 
   const headerEl = screen.getByRole('heading', {
-    name: /App Component/i,
+    name: /My App/i,
   });
 
   expect(headerEl).toBeInTheDocument();
