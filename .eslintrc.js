@@ -53,7 +53,7 @@ module.exports = {
     },
     ecmaVersion: 2020,
     sourceType: 'module',
-    project: './tsconfig.json',
+    project: 'tsconfig.json',
     // extraFileExtensions: ['.css'],
   },
   rules: {
