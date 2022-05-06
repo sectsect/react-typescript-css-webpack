@@ -11,7 +11,7 @@ import '@/assets/css/base/settings.css';
 // import 'sanitize.css';
 // import 'sanitize.css/forms.css';
 // import 'sanitize.css/typography.css';
-import '@/index.css';
+import '@/assets/css/global.css';
 import App from './App';
 
 const el = document.getElementById('root');

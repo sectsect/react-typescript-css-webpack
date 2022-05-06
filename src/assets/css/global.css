@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-@import 'assets/css/base/commons.css';
+@import 'base/commons.css';
 
-@import 'assets/css/base/structure.css';
+@import 'base/structure.css';
 
-@import 'assets/css/base/svg-icon.css';
+@import 'base/svg-icon.css';
 
 @tailwind base;
 

@@ -8,16 +8,6 @@ import Layout from '@/components/Layout';
 import { nameState } from '@/recoil/atoms/nameAtom';
 import { fetchPosts } from '@/utils/requests/post';
 
-// interface MyData {
-//   message: string;
-// }
-
-// declare global {
-//   interface Window {
-//     my_data: MyData;
-//   }
-// }
-
 const App: React.FC = () => {
   const setNameState = useSetRecoilState(nameState);
   const resetNameState = useResetRecoilState(nameState);
