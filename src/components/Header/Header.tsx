@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 
-import styles from './index.module.css';
+import styles from './style.module.css';
 import { nameState } from '@/recoil/atoms/nameAtom';
 
 const Header: React.FC = () => {

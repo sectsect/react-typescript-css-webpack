@@ -23,9 +23,9 @@ module.exports = {
     '^.+\\.module\\.(css|sass|scss)$',
   ],
   moduleNameMapper: {
-    "^@/(.*)$": "<rootDir>/src/$1",
-    "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js",
-    "\\.(gif|ttf|eot|svg)$": "<rootDir>/test/__mocks__/fileMock.js",
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '\\.(css|less)$': '<rootDir>/test/__mocks__/styleMock.js',
+    '\\.(gif|ttf|eot|svg)$': '<rootDir>/test/__mocks__/fileMock.js',
   },
   moduleFileExtensions: [
     'web.js',

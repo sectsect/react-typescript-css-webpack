@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { RecoilRoot } from 'recoil';
 
-import Header from '../index';
+import Header from '@/components/Header/Header';
 
 import '@testing-library/jest-dom/extend-expect';
 

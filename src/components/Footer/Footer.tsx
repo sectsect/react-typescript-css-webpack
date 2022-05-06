@@ -1,5 +1,5 @@
-import styles from './index.module.css';
-import Icons from '@/components/Icons';
+import styles from './style.module.css';
+import Icons from '@/components/Icons/Icons';
 
 const Footer: React.FC = () => {
   return (

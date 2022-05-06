@@ -4,7 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useQuery } from 'react-query';
 import { useSetRecoilState, useResetRecoilState } from 'recoil';
 
-import Layout from '@/components/Layout';
+import Layout from '@/components/Layout/Layout';
 import { nameState } from '@/recoil/atoms/nameAtom';
 import { fetchPosts } from '@/utils/requests/post';
 
