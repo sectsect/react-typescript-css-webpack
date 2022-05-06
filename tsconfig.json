@@ -15,23 +15,9 @@
     "paths": {
       // "*": ["*"],
       // "*": ["node_modules/*", "src/@types/*"],
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "src/**/*",
-    ".eslintrc.js",
-    "babel.config.js",
-    ".eslintrc.js",
-    "stylelint.config.js"
-  ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    "/test",
-    "**/*.test.ts",
-    "**/*.spec.ts"
-  ]
+  "include": ["src/**/*", ".eslintrc.js", "**/*.config.{js,ts}"],
+  "exclude": ["dist", "node_modules", "/test", "**/*.test.ts", "**/*.spec.ts"]
 }
