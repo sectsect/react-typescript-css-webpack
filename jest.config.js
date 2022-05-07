@@ -24,7 +24,8 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '\\.(css|less)$': '<rootDir>/test/__mocks__/styleMock.js',
+    // '\\.(css|less)$': '<rootDir>/test/__mocks__/styleMock.js',
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy', // Add support CSS Modules @ https://jestjs.io/docs/webpack#mocking-css-modules
     '\\.(gif|ttf|eot|svg)$': '<rootDir>/test/__mocks__/fileMock.js',
   },
   moduleFileExtensions: [
