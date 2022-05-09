@@ -29,9 +29,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "css.validate": false,
-  "scss.validate": false,
+  "scss.validate": false
   // // Add support for nested project structure.
   // "eslint.nodePath": "nextjs/node_modules",
   // @ https://bobbyhadz.com/blog/typescript-parsing-error-cannot-read-file
-  "eslint.workingDirectories": ["./src"]
+  // "eslint.workingDirectories": ["./src"]
 }
