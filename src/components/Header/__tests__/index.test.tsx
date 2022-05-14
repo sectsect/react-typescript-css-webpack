@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 
 import Header from '@/components/Header/Header';
@@ -8,7 +9,9 @@ import '@testing-library/jest-dom/extend-expect';
 test('header renders with correct text', () => {
   render(
     <RecoilRoot>
-      <Header />
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
     </RecoilRoot>,
   );
   // screen.getByRole('');

@@ -5,6 +5,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 
 import '@/assets/css/base/settings.css';
@@ -25,8 +26,10 @@ root.render(
   <React.StrictMode>
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
-        <App />
-        <ReactQueryDevtools initialIsOpen={false} />
+        <BrowserRouter>
+          <App />
+          <ReactQueryDevtools initialIsOpen={false} />
+        </BrowserRouter>
       </QueryClientProvider>
     </RecoilRoot>
   </React.StrictMode>,
