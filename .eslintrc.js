@@ -29,6 +29,7 @@ module.exports = {
     'unused-imports',
     'tailwindcss',
     'eslint-plugin-tsdoc',
+    'prefer-arrow',
     'import',
     'prettier',
     'jest',
@@ -102,6 +103,14 @@ module.exports = {
       { props: true, ignorePropertyModificationsFor: ['state'] },
     ],
     'no-underscore-dangle': 0,
+    'prefer-arrow/prefer-arrow-functions': [
+      'warn',
+      {
+        disallowPrototype: true,
+        singleReturnOnly: false,
+        classPropertiesAllowed: false,
+      },
+    ],
     'react/function-component-definition': [
       2,
       {
