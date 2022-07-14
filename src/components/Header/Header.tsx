@@ -11,7 +11,9 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       <div className="inner">
         <div className="flex items-baseline justify-between">
-          <h1 className={styles.heading}>My App</h1>
+          <h1 className={styles.heading}>
+            <Link to="/">My App</Link>
+          </h1>
           <span className="text-base font-bold">{`Hello ${name}`}</span>
         </div>
         <nav className="mt-5 font-bold">
