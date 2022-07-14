@@ -1,10 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# The reason we're exporting this variable is because of this issue:
-# https://github.com/typicode/husky/issues/968
-export FORCE_COLOR=1
-
 # npx lint-staged
 
 # Disable concurent to run build-types after ESLint in lint-staged
