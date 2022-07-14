@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className="inner">
-        <div className="flex justify-between items-baseline">
+        <div className="flex items-baseline justify-between">
           <h1 className={styles.heading}>My App</h1>
           <span className="text-base font-bold">{`Hello ${name}`}</span>
         </div>
