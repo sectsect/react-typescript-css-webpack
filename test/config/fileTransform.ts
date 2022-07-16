@@ -1,12 +1,12 @@
 const path = require('path');
-const camelcase = require('camelcase');
+const { camelCase } = require('change-case');
 
 module.exports = {
   process(src, filename) {
     const assetFilename = JSON.stringify(path.basename(filename));
 
     if (filename.match(/\.svg$/)) {
-      const pascalCaseFilename = camelcase(path.parse(filename).name, {
+      const pascalCaseFilename = camelCase(path.parse(filename).name, {
         pascalCase: true,
       });
       const componentName = `Svg${pascalCaseFilename}`;
