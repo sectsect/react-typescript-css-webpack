@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
+import { useQuery } from '@tanstack/react-query';
 import toast, { Toaster } from 'react-hot-toast';
-import { useQuery } from 'react-query';
 
 import { fetchPosts } from '@/utils/requests/post';
 
@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     data: posts,
     isLoading,
     error,
-  } = useQuery('posts', () => fetchPosts(), {
+  } = useQuery(['posts'], () => fetchPosts(), {
     // cacheTime: 1000, // Defaults to 5 * 60 * 1000 (5 minutes)
     // staleTime: Infinity,
     // refetchOnWindowFocus: false,
