@@ -1,10 +1,6 @@
 // @ https://stylelint.io/user-guide/example-config
 module.exports = {
-  extends: [
-    'stylelint-config-standard',
-    'stylelint-config-prettier',
-    'stylelint-config-recess-order',
-  ],
+  extends: ['stylelint-config-standard', 'stylelint-config-recess-order'],
   plugins: ['stylelint-prettier'],
   rules: {
     'alpha-value-notation': 'number',
